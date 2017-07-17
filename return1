@@ -1,0 +1,16 @@
+class Test
+{ void m1(int a,long b)
+{ System.out.println("int,long arguments method");
+}
+void m1(float f)
+{ System.out.println("float argument");
+}
+public static void main(String[] args)
+{ Test t=new Test();
+t.m1(10,20);
+t.m1((byte)10,(short)20);
+t.m1(10);
+t.m1(10L);
+}
+}
+
