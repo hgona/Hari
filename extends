@@ -1,0 +1,19 @@
+package test;
+class test
+{ void property()
+{ System.out.println("money+land+hhouse");
+}
+void Business() //overridden method
+{ System.out.println("Restuarant");
+}
+};
+class Child extends test
+{ void Business() //overriding method
+{ System.out.println("General store");
+}
+public static void main(String[] args)
+{ Child c=new Child();
+c.property();
+c.Business();
+}
+};
