@@ -1,0 +1,13 @@
+class Parent
+{ {System.out.println("parent instance block");} //instance block
+};
+class Child extends Parent
+{
+{ System.out.println("Child instance block"); } //instance block
+Child()
+{ System.out.println("chld 0-arg cons");
+}
+public static void main(String[] args)
+{ new Child();
+}
+};
