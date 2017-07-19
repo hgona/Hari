@@ -1,0 +1,16 @@
+class Parent
+{ Parent() {System.out.println(" Raju");}
+};
+class Child extends Parent
+{ Child()
+{ this(10); //current class 1-arg constructor calling
+System.out.println("Ram");
+}
+Child(int a)
+{ super(); //super class 0-arg constructor calling
+System.out.println("Ram"+a);
+}
+public static void main(String[] args)
+{ new Child();
+}
+};
