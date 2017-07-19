@@ -1,0 +1,12 @@
+class Parent
+{ static{System.out.println("parent static block");} //static block
+{System.out.println("parent instance block");} //instance block
+};
+class Child extends Parent
+{ static{System.out.println("child static block");} //static block
+{System.out.println("child instance block");} //instance block
+public static void main(String[] args)
+{ new Child();
+new Child();
+}
+};
