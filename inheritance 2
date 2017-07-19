@@ -1,0 +1,12 @@
+class Parent1
+{ void money() {System.out.println("1 Money");}
+};
+class Parent2
+{ void money() {System.out.println("2 money");}
+};
+class Child extends Parent1,Parent2
+{ public static void main(String[] args)
+{ Child c = new Child();
+c.money(); //ambiguity problems
+}
+};
