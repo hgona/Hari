@@ -1,0 +1,19 @@
+package parent;
+public class Parent extends Child
+{ 
+float Job()
+	{
+		System.out.println("GOV job");
+	return 10;
+	}
+public static void main(String[] args) {
+		new Child().Job();
+	}
+}
+public class Child
+{
+	float Job()
+	{ System.out.println("Software job");
+	return 10.5f;
+	}
+}
