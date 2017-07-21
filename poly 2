@@ -1,0 +1,13 @@
+package parent;
+
+public class Animal {
+	void Domestic()
+	{System.out.println("The animal is Cow");
+	}
+	public static void main(String[] args)
+	{
+		Animal A = new Animal();
+		A.Domestic();
+	
+	}
+}
