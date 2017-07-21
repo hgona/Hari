@@ -1,0 +1,12 @@
+package parent;
+
+public class Dog extends Animal{
+	void Domestic()
+	{System.out.println("Dog is Pet");
+	}
+	public static void main(String[] args)
+	{
+		Dog D = new Dog();
+		D.Domestic();
+	}
+}
