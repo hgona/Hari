@@ -1,0 +1,14 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] A) {
+        Arrays.sort(A);
+        int minValue = 1;
+        for(int value: A){
+            if (value == minValue){
+                minValue++;
+            }
+        }
+        return minValue;
+    }
+}
