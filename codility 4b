@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+
+    public int solution(int X, int[] A) {
+        int list[] = A;
+        int sum = 0;
+        int searchedValue = X;
+
+        List<Integer> arrayList = new ArrayList<Integer>();
+
+        for (int iii = 0; iii < list.length; iii++) {
+
+            if (list[iii] <= searchedValue && !arrayList.contains(list[iii])) {
+                sum += list[iii];
+                arrayList.add(list[iii]);
+            }
+            if (list[iii] == searchedValue) {
+                if (sum == searchedValue * (searchedValue + 1) / 2) {
+                    return iii;
+                }
+            }
+        }
+        return -1;
+    }
+}
