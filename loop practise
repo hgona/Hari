@@ -1,0 +1,49 @@
+//forloop
+
+public class Table3 {
+	public static void main(String[]args) {
+		for(int X=1;X<=10;X++) {
+			for(int Y=1;Y<=10;Y++) {
+				System.out.println(X+"*"+Y+"="+X*Y);
+				}
+			System.out.println("......................");
+
+                     }
+}
+}
+// while loop
+public class Tables {
+public static void main(String[]args) {
+	int X=1;
+	
+	while(X<=10) {
+		int Y=1;
+		while(Y<=10){
+			System.out.println(X+"*"+Y+"="+X*Y);
+			Y++;
+			}
+		
+		X++;
+		System.out.println("......................");
+		
+}
+}
+// do while
+public class Table2 {
+	public static void main(String[]args) {
+		int X=1;
+		do  {
+			int Y=1;
+			do {
+				System.out.println(X+"*"+Y+"="+X*Y);
+			Y++;}
+		while(Y<=10);
+			
+			System.out.println("......................");
+			X++;
+			}
+			while(X<=10);
+		
+				}
+
+}
