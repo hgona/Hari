@@ -1,0 +1,7 @@
+ import java.util.*;
+class Solution {
+    public int solution(int X, int Y, int D) {
+        int count=(int)Math.ceil((double)(Y-X)/D);
+        return count;
+    }
+}
