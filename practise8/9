@@ -1,0 +1,82 @@
+package Training;
+import java.util.Scanner;
+public class Address {
+	public void address() {
+		Scanner test = new Scanner(System.in);
+		System.out.println("Enter the Aptnumber");
+		int Aptnumber=test.nextInt();
+		System.out.println("Enter the streetname");
+		String streetname=test.next();
+		System.out.println("Enter the city ");
+		String city = test.next(); 
+	    System.out.println("Enter the state");
+		String state=test.next();
+		}
+	public void student() {	
+		Scanner test1 = new Scanner(System.in);
+		System.out.println("Enter the zipcode");
+		int zipcode=test1.nextInt();
+		if( zipcode==44240) {
+			System.out.println("He is a kent  state student");}
+		
+		else if(zipcode==94539){
+			System.out.println("He is a NPU state student");}
+		else if(zipcode==8830){
+			System.out.println("He is ny state student");}
+		else if(zipcode!=44240||zipcode!=94539) {
+			System.out.println("He is not NPU state student or kent state student");}
+		}
+----------------------------------------------------------------------------------------------------------------------------------	
+	}
+package Training;
+import java.util.Scanner;
+public class UserProfile {
+	public void userdetail() 
+	{
+		Scanner test = new Scanner(System.in);
+		System.out.println("Enter the firstname");
+		String firstname=test.next();
+		System.out.println("Enter the lastname");
+		String lastname=test.next();
+		System.out.println("Enter the email");
+		String email=test.next();
+		System.out.println("Enter the phonenum");
+		long phone=test.nextInt();
+		System.out.println("Enter the gender");
+		String gender=test.next();
+		
+}
+	int age=0;
+	public void agegroup() {
+		Scanner test1 = new Scanner(System.in);
+		System.out.println("Enter the age");
+		int age=test1.nextInt();
+		if(age<=12) {
+			System.out.println("The person is kid");}
+		else if(age>12&&age<20) {
+			System.out.println("The person is Teenage");
+		}
+		else if(age>=20&&age<=40) {
+			System.out.println("The person is adult");
+		}
+		else if(age>40){
+			System.out.println("The person is Old");
+		}
+}
+}
+------------------------------------------------------------------------------------------------------
+package Training;
+
+public class getdata {
+	public static void main(String[] args) {
+		UserProfile Hari1 = new UserProfile();
+		Hari1.userdetail();
+		Hari1.agegroup();
+
+		Address Hari = new Address();
+		Hari.address();
+		Hari.student();
+		
+
+	}
+}
