@@ -1,0 +1,61 @@
+
+package Calculator;
+import java.util.Scanner;
+public class Calculator {
+	public int addd() {
+		Scanner test = new Scanner(System.in);
+		System.out.println("Enter the firstnumber for addition");
+		int firstnumber = test.nextInt();
+		System.out.println("Enter the secondnumber for addition ");
+		int secondnumber = test.nextInt();
+		System.out.println("Enter the thirdnumber for addition");
+		int thirdnumber = test.nextInt();
+		return firstnumber + secondnumber + thirdnumber;
+	}
+	public int subb() {
+		Scanner test = new Scanner(System.in);
+		System.out.println("Enter the firstnumber for subtraction");
+		int firstnumber = test.nextInt();
+		System.out.println("Enter the secondnumber for subtraction ");
+		int secondnumber = test.nextInt();
+		System.out.println("Enter the thirdnumber for subtraction");
+		int thirdnumber = test.nextInt();
+		return firstnumber - secondnumber - thirdnumber;
+	}
+	public int multi() {
+		Scanner test = new Scanner(System.in);
+		System.out.println("Enter the firstnumber for multiplication");
+		int firstnumber = test.nextInt();
+		System.out.println("Enter the secondnumber for multiplication ");
+		int secondnumber = test.nextInt();
+		System.out.println("Enter the thirdnumber for multiplication");
+		int thirdnumber = test.nextInt();
+		return firstnumber * secondnumber * thirdnumber;
+	}
+	public double divquo() {
+		Scanner test = new Scanner(System.in);
+		System.out.println("Enter the firstnumber for division");
+		int firstnumber = test.nextInt();
+		System.out.println("Enter the secondnumber for division ");
+		int secondnumber = test.nextInt();
+		System.out.println("Enter the thirdnumber for division");
+		int thirdnumber = test.nextInt();
+		return (double)firstnumber / secondnumber / thirdnumber;
+	}
+	public double remi() {
+		Scanner test = new Scanner(System.in);
+		System.out.println("Enter the firstnumber to get reminder");
+		int firstnumber = test.nextInt();
+		System.out.println("Enter the secondnumber to get reminder ");
+		int secondnumber = test.nextInt();
+		System.out.println("Enter the thirdnumber to get reminder");
+		int thirdnumber = test.nextInt();
+		return firstnumber % secondnumber %thirdnumber;
+	}
+}
+package Calculator;
+
+public class Calc {
+	public static void main(String[] args) {
+		Calculator test = new Calculator();
+		System.out.println(test.addd());
