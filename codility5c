@@ -1,0 +1,30 @@
+class Solution {
+    public int solution(int[] A) {
+    if (A.length == 2) return 0;
+
+    int miSTwo = A[0] + A[1];
+    int miTwoInd = 0;
+
+    int miSThree = Integer.MAX_VALUE;
+    int miThreeInd = 0;
+
+    for (int i = 2; i < A.length; i++) {
+        int sliceTwo = A[i - 1] + A[i];
+        if (sliceTwo < miSTwo) {
+            miSTwo = sliceTwo;
+            miTwoInd = i - 1;
+        }
+
+        int sliceThree = sliceTwo + A[i - 2];
+        if (sliceThree < miSThree) {
+            miSThree = sliceThree;
+            miThreeInd = i - 2;
+        }
+    }
+    int averageMinTwo = miSTwo*3;
+    int averageMinThree = miSThree*2;
+
+    if (averageMinTwo == averageMinThree) return Math.min(miTwoInd, miThreeInd);
+    else return averageMinTwo < averageMinThree ? miTwoInd : miThreeInd;
+}
+}
