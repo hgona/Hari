@@ -1,0 +1,21 @@
+package Training;
+import java.util.Scanner;
+public class Cal1 {
+		public void PrintType() {
+		Scanner Addition = new Scanner(System.in);
+		System.out.print("Enter your Range: ");
+		int Ran = Addition.nextInt();
+		int result=0;
+		for (int i = 1; i <= Ran; i++) {
+			System.out.print("Enter your  number: ");
+			int c = Addition.nextInt();
+			 result= c+result;
+			}
+		System.out.println(result);
+		}
+		public static void main(String[] args) {
+			Cal1 add = new Cal1();
+			add.PrintType();
+		}
+	}
+
