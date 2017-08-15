@@ -1,0 +1,14 @@
+class Solution {
+    public int solution(int[] A) {
+        int result=0;
+        int arraylength= A.length;
+        if (arraylength>0) {
+            result=A[0];
+            for(int i=1;i<arraylength;i++){
+                result^=A[i];
+            }
+        }
+        return result;
+                
+    }
+}
