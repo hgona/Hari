@@ -1,0 +1,50 @@
+package haripackage;
+public class Calculator2 {
+	long result;
+
+	public long operate(long x, long y, String ch) {
+        result=x;
+		if (ch.equals( "+")) {
+			result = x + y;
+         }else if (ch.equals( "-")) {
+			result = x - y;
+		} else if (ch.equals( "*") ){
+			result = x * y;
+		} else if (ch.equals( "/")){
+			result = x / y;
+		}
+		return result;
+	}
+}
+--------------------------------------------------------
+
+
+package haripackage;
+import java.util.Scanner;
+public class Calc {
+public static void main(String[] args){
+	Calculator2 calc=new Calculator2();	
+	Scanner scanner=new Scanner(System.in);
+	long result=0;
+	System.out.println("Provide value:");           
+	long val1=scanner.nextInt();
+	long val2=0;
+		while(true) {
+	System.out.println("Operation:");
+		String operation=scanner.next();
+		if(operation.equals("=")) {			
+			System.out.println(calc.operate(val1,val2,operation));
+		   break;
+		 }
+		else{System.out.println("Provide nextvalue:");
+		 val2=scanner.nextInt();
+			result=calc.operate(val1,val2,operation);
+		}
+		val1=result;
+		  }
+		}
+		}
+		
+
+		
+		
