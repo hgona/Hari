@@ -1,0 +1,27 @@
+import java.util.*;
+class Solution {
+
+    public int solution(int[] A, int[] B) {
+  int count = 0;
+   Stack < Integer > previousFishes = new Stack < Integer > ();
+    for (int i = 0; i < A.length; i++) {
+        int currentFish = A[i];
+
+   int currentFlow = B[i];
+  if (currentFlow == 1) {
+  previousFishes.push(currentFish);
+    }
+   if (!previousFishes.empty() && currentFlow == 0) {
+   while (!previousFishes.empty() && currentFish > previousFishes.peek()) {
+  int fish = previousFishes.pop();
+   }
+   }
+  if (previousFishes.empty() && currentFlow == 0) {
+  count++;
+  }
+ 
+  }
+return count + previousFishes.size();
+
+    }
+}
