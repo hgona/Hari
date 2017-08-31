@@ -1,0 +1,11 @@
+class Solution {
+    public int solution(int[] A) {
+        int max = 0;
+        for (int iL = 0, iR = 1; iR < A.length; iR++) {
+            int diff = A[iR] - A[iL];
+            if (diff < 0) iL = iR;
+            else max = Math.max(max, diff);
+        }
+        return max;
+    }
+}
