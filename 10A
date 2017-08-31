@@ -1,0 +1,7 @@
+class Solution {
+    public int solution(int N) {
+        for (int i = (int)Math.sqrt(N); true ; i--)
+            if (N % i == 0)
+                return 2 * i + 2 * (N / i);
+    }
+}
