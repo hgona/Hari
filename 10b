@@ -1,0 +1,24 @@
+class Solution {
+    public int solution(int[] A) {
+        int result = 0;
+        int[] peaksLeft = new int[A.length];
+        for (int i = 1; i < A.length - 1; i++) {
+            if (A[i - 1] < A[i] && A[i] > A[i + 1])
+                peaksLeft[i]++;
+            peaksLeft[i + 1] = peaksLeft[i];
+        }
+        outer:
+        for (int nBlocks = 1; nBlocks <= peaksLeft[A.length - 1]; nBlocks++){
+            if (A.length % nBlocks == 0) {
+                int blockSize = A.length / nBlocks;
+                for (int j = blockSize-1, lastNPeaks = 0, nPeaks = 0; j < A.length; j += blockSize, lastNPeaks = nPeaks) {
+                    nPeaks = peaksLeft[j];
+                    if (nPeaks <= lastNPeaks)
+                        continue outer;
+                }
+                result = nBlocks;
+            }
+        }
+        return result;
+    }
+}
