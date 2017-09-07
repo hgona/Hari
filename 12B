@@ -1,0 +1,40 @@
+class Solution {
+    
+    public int choco(int a, int b) {
+        if ((a % b) == 0) {
+            return b;
+        } else {
+            return choco(b, a % b);
+        }
+    }
+    
+    public int solution(int[] A, int[] B) {
+        int result = 0;
+
+        for (int i = 0; i < A.length; i++) {
+            int a = A[i];
+            int b = B[i];
+
+            int d = choco(a, b);
+            int c;
+            c = 0;
+            while (c != 1) {
+                c = choco(a, d);
+                a /= c;
+            }
+
+            c = 0;
+            while (c != 1) {
+                c = choco(b, d);
+                b /= c;
+            }
+
+            if (a == 1 && b == 1) {
+                result++;
+            }
+
+        }
+        
+        return result;
+    }
+}
