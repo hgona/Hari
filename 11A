@@ -1,0 +1,40 @@
+class Solution {
+    public int[] solution(int N, int[] P, int[] Q) {
+        int[] M = new int[ P.length];
+      int[] A = new int[N + 1];
+        int i = 2;
+        while (i * i <= N) {
+            if (A[i] == 0) {
+                int k = i * i;
+                while (k <= N) {
+                    if (A[k] == 0) {
+                        A[k] = i;
+                    }
+                    k += i;
+                }
+            }
+            i++;
+        }
+
+        int[] semi = new int[N + 1];
+
+        int sum = 0;
+        for (int k = 1; k <= N; k++) {
+            if (A[k] != 0) {
+                int b = k / A[k];
+                if (A[b] == 0) {
+                    sum++;
+                }
+            }
+            semi[k] = sum;
+        }
+
+        for (int j = 0; j < P.length; j++) {
+            int p = P[j];
+            int q = Q[j];
+            M[j] = semi[q] - semi[p - 1];
+        }
+
+        return M;
+    }
+}
