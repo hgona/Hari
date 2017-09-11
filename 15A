@@ -1,0 +1,49 @@
+class Solution {
+public int solution(int[] A) {
+        int count = 1;
+        int i = 0;
+        int j = A.length - 1;
+
+        if (A[i] == Integer.MIN_VALUE) {
+            count++;
+            while (i < A.length && A[i] == Integer.MIN_VALUE) {
+                i++;
+            }
+        }
+
+        for (int k = 0; k < A.length; k++) {
+            if (A[k] < 0) {
+                A[k] = -A[k];
+            } else {
+                break;
+            }
+        }
+
+        int left = A[i];
+        int right = A[j];
+        int current = Math.max(left, right);
+        while (j >= i) {
+            left = A[i];
+            right = A[j];
+            if (current == left) {
+                i++;
+                continue;
+            }
+            if (current == right) {
+                j--;
+                continue;
+            }
+
+            if (left >= right) {
+                current = left;
+                i++;
+            } else {
+                current = right;
+                j--;
+            }
+
+            count++;
+        }
+        return count;
+    }
+}
