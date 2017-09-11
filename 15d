@@ -1,0 +1,13 @@
+import java.util.*;
+import static java.lang.Math.*;
+public class Solution {
+ public int solution(int[] A) {
+        Arrays.sort(A);
+        int result = abs(A[0] + A[A.length-1]);
+        for (int i = 0, j = A.length - 1; i < j && result > 0; result = min(result, abs(A[i] + A[j]))) {
+            if (-A[i] > A[j]){ i++; }
+            else { j--; }
+        }
+        return result;
+    }
+}
