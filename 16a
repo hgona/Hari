@@ -1,0 +1,18 @@
+class Solution {
+    public int solution(int[] A, int[] B) {
+        if (A.length ==0) {
+            return A.length;
+        }
+
+        int count = 1;
+        int ending = B[0];
+        for (int i = 1; i < B.length; i++) {
+            if (A[i] > ending) {
+                ending = B[i];
+                count++;
+            }
+        }
+        
+        return count;
+    }
+}
