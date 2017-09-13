@@ -1,0 +1,42 @@
+class Solution {
+    public int solution(int[] A) {
+        if (A.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < A.length; i++) {
+            final int value = Math.abs(A[i]);
+            sum += value;
+            if (max < value) {
+                max = value;
+            }
+            A[i] = value;
+        }
+        final int[] B = new int[max + 1];
+        for (int value: A) {
+            B[value]++;
+        }
+        final int[] C = new int[sum + 1];
+        for (int i = 1; i < C.length; i++) {
+            C[i] = -1;
+        } 
+        for (int i = 1; i < B.length; i++) {
+            for (int j = 0; j < C.length; j++) {
+                if (C[j] >= 0) {
+                    C[j] = B[i];
+                } else if (j - i >= 0 && C[j - i] > 0) {
+                    C[j] = C[j - i] - 1;
+                }
+            
+            }
+        }
+        int result = sum;
+        for (int i = 0; i < C.length / 2 + 1; i++) {
+            if (C[i] >= 0 && result > Math.abs(sum - 2 * i)) {
+                result = Math.abs(sum - 2 * i);
+            }
+        }
+        return result;
+    }
+}
